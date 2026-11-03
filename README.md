@@ -139,3 +139,13 @@ Outputs include forecasting predictions and metrics, scenario tables, GIS and em
 ## 12. Citation, Licensing, and Repository Maintenance
 
 When publishing results, cite the associated manuscript and original dataset sources. No open-source licence is declared by the supplied repository; add a LICENSE file only after the project owner selects a licence. Contributions, issue reporting instructions, author affiliations, DOI, and a publication citation can be added after those details are confirmed. Do not present synthetic smoke-test values as independently reproduced manuscript results.
+
+## 13. Repository Access
+
+**GitHub Repository:** [AI-Green-Hydrogen](https://github.com/061209-geetha/AI-Green-Hydrogen)
+
+**Clone Repository:**
+
+```bash
+git clone https://github.com/061209-geetha/AI-Green-Hydrogen.git
+cd AI-Green-Hydrogen
