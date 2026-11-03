@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1443875748.svg)](https://doi.org/10.5281/zenodo.23909041)
+
 # AI-Enhanced Integration of Green Hydrogen in Urban Infrastructure for Carbon-Neutral Cities
 
 **GitHub Repository README | Python Research Implementation**
