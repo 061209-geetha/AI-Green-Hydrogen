@@ -1,4 +1,5 @@
 [![DOI](https://zenodo.org/badge/1443875748.svg)](https://doi.org/10.5281/zenodo.23909041)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/061209-geetha/AI-Green-Hydrogen)
 
 # AI-Enhanced Integration of Green Hydrogen in Urban Infrastructure for Carbon-Neutral Cities
 
