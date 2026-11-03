@@ -1,0 +1,7 @@
+-r requirements-geo.txt
+xgboost>=2.0
+statsmodels>=0.14
+shap>=0.45
+pulp>=2.8
+pyarrow>=14
+pytest>=7.4

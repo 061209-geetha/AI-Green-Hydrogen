@@ -1,0 +1,180 @@
+{
+  "type": "SYNTHETIC DEMONSTRATION ONLY",
+  "forecast_metrics": {
+    "LSTM": {
+      "mae_kwh_day": 5.879881084377881,
+      "rmse_kwh_day": 7.309579525115859,
+      "r2": -0.2609731127574677,
+      "mape_percent": 15.433069944342234,
+      "mape_accuracy_percent": 84.56693005565776,
+      "n": 144
+    },
+    "Ridge": {
+      "mae_kwh_day": 7.535125454266866,
+      "rmse_kwh_day": 8.779668588605253,
+      "r2": -0.8191867360789276,
+      "mape_percent": 17.530442566887107,
+      "mape_accuracy_percent": 82.4695574331129,
+      "n": 144
+    },
+    "RandomForest": {
+      "mae_kwh_day": 4.209785493513108,
+      "rmse_kwh_day": 5.1544642744703975,
+      "r2": 0.37297031277849413,
+      "mape_percent": 10.067229136296227,
+      "mape_accuracy_percent": 89.93277086370378,
+      "n": 144
+    },
+    "GBDT": {
+      "mae_kwh_day": 4.71677584652469,
+      "rmse_kwh_day": 5.7933795409563,
+      "r2": 0.20789090808536226,
+      "mape_percent": 10.787413283656665,
+      "mape_accuracy_percent": 89.21258671634334,
+      "n": 144
+    },
+    "Persistence": {
+      "mae_kwh_day": 4.362622316371155,
+      "rmse_kwh_day": 5.203126586333253,
+      "r2": 0.36107509150806205,
+      "mape_percent": 10.346948532250124,
+      "mape_accuracy_percent": 89.65305146774988,
+      "n": 144
+    }
+  },
+  "forecast_household_mean_h2_kwh_day": 47.997154127922826,
+  "forecast_scaled_h2_tonnes_day": 36.57748919439663,
+  "spatial_planning_demand_source": "forecast",
+  "spatial_planning_h2_tonnes_day": 36.57748919439663,
+  "baseline_inventory": {
+    "dwellings": 25400,
+    "annual_electricity_kwh": 86360000.0,
+    "annual_gas_kwh": 284480000.0,
+    "baseline_tco2e_yr": 69912.23,
+    "annual_h2_kwh": 457200000.0,
+    "annual_h2_tonnes": 13717.371737173717
+  },
+  "spatial_optimized": {
+    "n_opened": 4,
+    "opened_ids": [
+      "S10",
+      "S27",
+      "S28",
+      "S30"
+    ],
+    "assignments": {
+      "Z01": "S27",
+      "Z02": "S28",
+      "Z03": "S10",
+      "Z04": "S28",
+      "Z05": "S30",
+      "Z06": "S30",
+      "Z07": "S27",
+      "Z08": "S28",
+      "Z09": "S10",
+      "Z10": "S27"
+    },
+    "coverage_fraction": 1.0,
+    "served_demand_tpd": 36.577489194396634,
+    "total_demand_tpd": 36.577489194396634,
+    "pipeline_unique_km": 12.0833343,
+    "pipeline_installed_km": 12.0833343,
+    "mean_routed_hub_zone_km": 3.5833336200000003,
+    "deployment_cost_musd": 9.300000232,
+    "mean_station_response_km": 0.5921678736061563,
+    "redundancy_ratio": 0.0,
+    "station_load_tpd": {
+      "S10": 9.657416601707807,
+      "S27": 8.561712579754035,
+      "S28": 9.92090003492111,
+      "S30": 8.437459978013681
+    },
+    "zone_coverage": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "spatial_distance_only_baseline": {
+    "n_opened": 4,
+    "opened_ids": [
+      "S10",
+      "S27",
+      "S28",
+      "S30"
+    ],
+    "assignments": {
+      "Z01": "S27",
+      "Z02": "S28",
+      "Z03": "S10",
+      "Z04": "S28",
+      "Z05": "S30",
+      "Z06": "S30",
+      "Z07": "S27",
+      "Z08": "S28",
+      "Z09": "S10",
+      "Z10": "S27"
+    },
+    "coverage_fraction": 1.0,
+    "served_demand_tpd": 36.577489194396634,
+    "total_demand_tpd": 36.577489194396634,
+    "pipeline_unique_km": 15.0000012,
+    "pipeline_installed_km": 20.833335000000016,
+    "mean_routed_hub_zone_km": 3.5833336200000003,
+    "deployment_cost_musd": 11.400000400000003,
+    "mean_station_response_km": 0.5921678736061563,
+    "redundancy_ratio": 0.2800000000000006,
+    "station_load_tpd": {
+      "S10": 9.657416601707807,
+      "S27": 8.561712579754035,
+      "S28": 9.92090003492111,
+      "S30": 8.437459978013681
+    },
+    "zone_coverage": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "carbon_break_even_kgco2e_per_kg_h2": 5.096619916666666,
+  "heat_regressor_cv": {
+    "five_fold_mae_mean": 1.5912800103728302,
+    "five_fold_mae_sd": 0.10042840576701476
+  },
+  "conversion_metadata": {
+    "synthetic_gas_demand": true,
+    "synthetic_acorn_uci_crosswalk": true,
+    "hotwater_kwh_day": 6.746064339493497,
+    "heat_scale": 0.06594208318227462,
+    "acorn_to_uci_index": {
+      "Group_0": 68,
+      "Group_1": 594,
+      "Group_2": 502,
+      "Group_3": 337,
+      "Group_4": 332
+    },
+    "n_households": 12
+  },
+  "date_split": {
+    "train_end": "2012-03-17",
+    "val_start": "2012-03-18",
+    "val_end": "2012-03-28",
+    "test_start": "2012-03-29",
+    "test_end": "2012-04-09"
+  },
+  "runtime_seconds": 8.43956257100001
+}

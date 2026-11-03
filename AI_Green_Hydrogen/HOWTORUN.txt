@@ -1,0 +1,76 @@
+AI-ENHANCED GREEN HYDROGEN: HOW TO RUN
+======================================
+
+1) INSTALL (Python 3.11 recommended)
+   python -m venv .venv
+   Linux/macOS: source .venv/bin/activate
+   Windows: .venv\Scripts\activate
+   pip install -r requirements.txt
+
+2) FULLY OFFLINE DEMO / SMOKE TEST (SYNTHETIC DATA)
+   python run_pipeline.py --mode demo --epochs 3 --n-households 20 --days 110 --output outputs/demo_smoke
+   The above generates a LSTM checkpoint, forecast CSVs, carbon tables, GIS plot,
+   five or more 600-DPI figures, and JSON manifests. All inputs are synthetic.
+
+3) STANDARD DEMO
+   python run_pipeline.py --mode demo --epochs 30 --n-households 80 --days 380 --output outputs/demo_full
+
+4) UNIT TESTS
+   python -m unittest discover -s tests -v
+
+5) REAL DATA RUN (requires Internet for OpenStreetMap)
+   pip install -r requirements-geo.txt
+   Download the Low Carbon London half-hourly household data and UCI Energy
+   Efficiency dataset, and prepare daily weather as date,temperature_c.
+
+   python run_pipeline.py --mode real --lcl /path/to/LCL.csv --uci /path/to/ENB2012_data.xlsx \
+     --weather-csv /path/to/london_weather.csv \
+     --bbox 51.57 51.525 -0.00 -0.08 \
+     --max-real-households 250 --epochs 100 --output outputs/london
+
+   IMPORTANT: Replace the example bbox with the actual archived case-study
+   boundary. OSM site candidates are algorithmically sampled until validated
+   real fuel-station and brownfield location data are supplied.
+
+   Meteostat alternative: pip install meteostat
+   Replace --weather-csv with --fetch-weather.
+
+6) MANUSCRIPT-MATCHING LSTM RECURRENT DROPOUT
+   pip install tensorflow
+   python run_pipeline.py --mode demo --backend tensorflow --epochs 20
+   (PyTorch works without TensorFlow but lacks Keras recurrent dropout.)
+
+7) FORECAST DRIVES SPATIAL PLANNING
+   In configs/default.yaml set spatial.demand_source: forecast
+   Forecast is the default: trained model outputs drive spatial site selection.
+   Set spatial.demand_source: reference_inventory for the documented
+   25,400-dwelling annual energy-reference planning comparison.
+
+8) OUTPUTS
+   outputs/<run>/summary.json
+   outputs/<run>/run_manifest.json
+   outputs/<run>/spatial_results.json
+   outputs/<run>/tables/*.csv
+   outputs/<run>/figures/*.png
+   outputs/<run>/checkpoints/lstm_best.pt (or .keras)
+
+9) LIMITATIONS
+   Do not cite synthetic outputs as independently reproduced numerical results.
+   Real household gas use and geolocation are NOT present in the LCL dataset.
+   Actual station parcel eligibility, sensitive-area 50-m buffers, and project
+   supply hub must be independently validated for deployment studies.
+   Outputs are research simulation, not engineering-certified pipelines.
+
+10) EXPANDED BENCHMARK SUITE (16 comparison models when XGBoost installed)
+    pip install xgboost
+    python run_pipeline.py --mode demo --epochs 30 --full-benchmarks --benchmark-epochs 15 --output outputs/benchmarks
+    Includes persistence, seasonal naive, ridge, lasso, elastic net, RF, ExtraTrees, GBDT, KNN, SVR, MLP, XGBoost, GRU, TCN, CNN-LSTM and Transformer.
+    SARIMA per household is not included; use the published study details to reproduce any unspecified hyperparameters.
+
+11) FIVE INDEPENDENT RANDOM-SEED RUNS
+    python run_experiments.py --seeds 0 1 2 3 4 --mode demo --epochs 100 --output outputs/five_seeds
+
+12) MODEL EXPLANATIONS
+    Standard runs generate figures/gradient_feature_importance.png.
+    For optional SHAP (PyTorch): pip install shap
+    python run_pipeline.py --mode demo --epochs 30 --shap

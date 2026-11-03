@@ -1,0 +1,5 @@
+-r requirements.txt
+osmnx>=1.9
+geopandas>=0.14
+shapely>=2.0
+pyproj>=3.6

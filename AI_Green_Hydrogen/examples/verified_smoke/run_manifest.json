@@ -1,0 +1,99 @@
+{
+  "input_data_type": "SYNTHETIC DEMONSTRATION ONLY",
+  "source_files": {},
+  "notes": [
+    "Demo inputs are synthetic",
+    "LCL gas is estimated using degree days; not measured",
+    "ACORN-to-UCI mapping is synthetic",
+    "Spatial allocation is synthetic",
+    "Real OSM station locations are provisional",
+    "Exact manuscript results are NOT built into the implementation",
+    "Default planning uses documented annual baseline inventory; select spatial.demand_source=forecast to couple demand forecast into planning",
+    "Torch LSTM omits Keras recurrent dropout; use tensorflow backend for exact recurrent-dropout setting"
+  ],
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "config": {
+    "seed": 42,
+    "lookback": 24,
+    "forecast": {
+      "epochs": 100,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "patience": 10,
+      "lr_patience": 5,
+      "hidden1": 128,
+      "hidden2": 64,
+      "dropout": 0.2,
+      "recurrent_dropout": 0.1,
+      "max_households": 5567,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "test_fraction": 0.15,
+      "val_fraction": 0.15
+    },
+    "hydrogen": {
+      "fuel_cell_efficiency": 0.5,
+      "boiler_ratio": 1.0,
+      "h2_lhv_kwh_kg": 33.33,
+      "hdd_base_c": 15.5,
+      "annual_gas_kwh": 11200.0,
+      "annual_electric_kwh": 3400.0,
+      "hot_water_fraction": 0.22
+    },
+    "spatial": {
+      "demand_source": "forecast",
+      "n_zones": 10,
+      "n_sites": 38,
+      "n_dwellings": 25400,
+      "radius_km": 3.5,
+      "k_max": 6,
+      "station_capacity_tpd": 12.0,
+      "pipeline_cost_musd_km": 0.24,
+      "station_cost_musd": 1.6,
+      "access_penalty_musd": 0.5,
+      "access_weights": [
+        0.4,
+        0.3,
+        0.3
+      ],
+      "decay_road_km": 0.5,
+      "decay_transit_km": 0.8,
+      "max_iterations": 500,
+      "stagnation_iterations": 20,
+      "relative_improvement": 0.001,
+      "exclusion_buffer_m": 50
+    },
+    "carbon": {
+      "electricity_kgco2e_kwh": 0.20705,
+      "gas_kgco2e_kwh": 0.1829,
+      "h2_kgco2e_kg": 0.75,
+      "substitution_fractions": [
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "intensities_kgco2e_kg": [
+        0.37,
+        0.75,
+        2.0,
+        5.1,
+        8.0,
+        11.4
+      ]
+    }
+  },
+  "seed": 42,
+  "backend": "torch",
+  "command": "run_pipeline.py --mode demo --epochs 2 --n-households 12 --days 100 --output outputs/final_smoke",
+  "train_size": 636,
+  "val_size": 132,
+  "test_size": 144,
+  "case_study_type": "synthetic_demo"
+}

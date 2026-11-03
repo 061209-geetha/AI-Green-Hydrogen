@@ -1,0 +1,98 @@
+{
+  "optimized": {
+    "n_opened": 4,
+    "opened_ids": [
+      "S10",
+      "S27",
+      "S28",
+      "S30"
+    ],
+    "assignments": {
+      "Z01": "S27",
+      "Z02": "S28",
+      "Z03": "S10",
+      "Z04": "S28",
+      "Z05": "S30",
+      "Z06": "S30",
+      "Z07": "S27",
+      "Z08": "S28",
+      "Z09": "S10",
+      "Z10": "S27"
+    },
+    "coverage_fraction": 1.0,
+    "served_demand_tpd": 36.577489194396634,
+    "total_demand_tpd": 36.577489194396634,
+    "pipeline_unique_km": 12.0833343,
+    "pipeline_installed_km": 12.0833343,
+    "mean_routed_hub_zone_km": 3.5833336200000003,
+    "deployment_cost_musd": 9.300000232,
+    "mean_station_response_km": 0.5921678736061563,
+    "redundancy_ratio": 0.0,
+    "station_load_tpd": {
+      "S10": 9.657416601707807,
+      "S27": 8.561712579754035,
+      "S28": 9.92090003492111,
+      "S30": 8.437459978013681
+    },
+    "zone_coverage": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "distance_only_baseline": {
+    "n_opened": 4,
+    "opened_ids": [
+      "S10",
+      "S27",
+      "S28",
+      "S30"
+    ],
+    "assignments": {
+      "Z01": "S27",
+      "Z02": "S28",
+      "Z03": "S10",
+      "Z04": "S28",
+      "Z05": "S30",
+      "Z06": "S30",
+      "Z07": "S27",
+      "Z08": "S28",
+      "Z09": "S10",
+      "Z10": "S27"
+    },
+    "coverage_fraction": 1.0,
+    "served_demand_tpd": 36.577489194396634,
+    "total_demand_tpd": 36.577489194396634,
+    "pipeline_unique_km": 15.0000012,
+    "pipeline_installed_km": 20.833335000000016,
+    "mean_routed_hub_zone_km": 3.5833336200000003,
+    "deployment_cost_musd": 11.400000400000003,
+    "mean_station_response_km": 0.5921678736061563,
+    "redundancy_ratio": 0.2800000000000006,
+    "station_load_tpd": {
+      "S10": 9.657416601707807,
+      "S27": 8.561712579754035,
+      "S28": 9.92090003492111,
+      "S30": 8.437459978013681
+    },
+    "zone_coverage": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}
